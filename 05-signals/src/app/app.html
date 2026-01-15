@@ -1,0 +1,10 @@
+<div class="p-4">
+    <button class="bg-amber-400 rounded-2xl px-4 py-2 cursor-pointer" (click)="addCount()">Add Count</button>
+    <h2 class="text-2xl bg-blue-300 my-3">Value of Count is {{ count() }}</h2>
+    <button class="bg-amber-400 rounded-2xl px-4 py-2 cursor-pointer" (click)="deductCount()">Deduct Count</button>
+</div>
+<div class="p-4">
+    <input #qty type="number" class="border border-amber-400 rounded-2xl px-4 py-2" [value]="quantity()">
+    <h2 class="text-2xl bg-blue-300 my-3">Total Price: {{total()}}</h2>
+    <button class="bg-amber-400 rounded-2xl px-4 py-2 cursor-pointer" (click)="changeQuantity(qty.value)">Update Quantity</button>
+</div>

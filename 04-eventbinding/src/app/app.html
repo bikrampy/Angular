@@ -1,0 +1,55 @@
+<div class="m-4 p-4">
+  <p>Username is: {{ username }}</p>
+  <p>Email is: {{ email }}</p>
+  <p>Preferred Skill is: {{ skill }}</p>
+</div>
+<div class="m-4">
+  <label for="username">Username: </label>
+  <input
+    type="text"
+    name=""
+    id="username"
+    class="border-2 border-white"
+    (input)="onInput($event)"
+  />
+</div>
+<div class="m-4">
+  <label for="email">Email: </label>
+  <input
+    type="text"
+    name=""
+    id="email"
+    class="border-2 border-white"
+    (change)="onChange($event)"
+  />
+</div>
+<div class="m-4">
+  <button (click)="onClick($event)" class="m-4 px-4 py-2 bg-pink-600 text-white">Click Me</button>
+</div>
+<div class="m-4">
+  <label for="skill">Preferred Skill:</label>
+  <select name="" id="skill" (change)="onSelectChange($event)">
+    <option value="HTML">HTML</option>
+    <option value="CSS">CSS</option>
+    <option value="JS">JS</option>
+  </select>
+</div>
+<div class="m-4">
+  <div>
+    <label for="num1">Number 1:</label>
+    <input #num1 type="number" name="" id="num1" class="p-2 border-2 border-white" (input)="handleNum1($event)"/>
+  </div>
+  <div>
+    <label for="num2">Number 2:</label>
+    <input #num2 type="number" name="" id="num2" class="p-2 border-2 border-white" (input)="handleNum2($event)"/>
+  </div>
+  <button class="px-4 py-2 bg-pink-600 text-white" (click)="calculateSum()">Sum</button>
+  <p>{{result ? `Result is: ${result}` : ``}}</p>
+</div>
+<div class="m-4">
+  <input class="bg-amber-300 mb-1" (blur)="onBlur()" /> <br>
+  <input class="bg-amber-300" (focus)="onFocus()" />
+</div>
+<div class="m-4 bg-amber-400 text-black" (mouseenter)="onEnter()" (mouseleave)="onLeave()">
+  <p>{{sampleText ? sampleText : `Hover Me`}}</p>
+</div>

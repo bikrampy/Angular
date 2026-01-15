@@ -1,0 +1,23 @@
+<div
+  class="min-h-dvh p-4"
+  [ngClass]="{
+    'bg-black text-white': isDarkMode(),
+    '': !isDarkMode()
+  }"
+>
+  @if (isDarkMode()) {
+  <p class="mb-2 text-4xl">Hello ngClass in Dark Mode</p>
+  } @else {
+  <p class="mb-2 text-4xl">Hello ngClass in Light Mode</p>
+  }
+  <button
+    class="px-4 py-2 rounded-2xl"
+    [ngClass]="{
+      'bg-white text-black': isDarkMode(),
+      'bg-black text-white': !isDarkMode()
+    }"
+    (click)="isDarkMode.set(!isDarkMode())"
+  >
+    Toggle
+  </button>
+</div>

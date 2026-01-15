@@ -1,0 +1,3 @@
+<p>Value is {{data()}}</p>
+<input #dt type="text" (input)="setData(dt.value)" [value]="data()">
+<button (click)="resetData()">Reset Data</button>

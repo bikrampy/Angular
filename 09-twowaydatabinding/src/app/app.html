@@ -1,0 +1,109 @@
+<div class="min-h-screen bg-linear-to-br from-slate-100 to-slate-200 flex items-center justify-center p-6">
+  <div class="w-full max-w-3xl bg-white rounded-2xl shadow-xl p-8 space-y-10">
+
+    <!-- Header -->
+    <div class="text-center space-y-1">
+      <h1 class="text-3xl font-bold text-slate-800">Two-Way Data Binding Playground</h1>
+      <p class="text-slate-500 text-sm">Angular Signals & ngModel examples</p>
+    </div>
+
+    <!-- Number Signal -->
+    <div class="rounded-xl border border-slate-200 p-6 space-y-3">
+      <h2 class="text-lg font-semibold text-slate-700">
+        Age Signal:
+        <span class="text-blue-600 font-bold">{{ NumberSignals['age']() }}</span>
+      </h2>
+      <input
+        type="number"
+        class="w-full rounded-lg border border-slate-300 px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none transition"
+        [value]="NumberSignals['age']()"
+        (input)="handleNumberValue($event, 'age')"
+      >
+    </div>
+
+    <!-- Text Signal -->
+    <div class="rounded-xl border border-slate-200 p-6 space-y-3">
+      <h2 class="text-lg font-semibold text-slate-700">
+        Username Signal:
+        <span class="text-emerald-600 font-bold">{{ TextSignals['username']() }}</span>
+      </h2>
+      <input
+        type="text"
+        class="w-full rounded-lg border border-slate-300 px-4 py-2 focus:ring-2 focus:ring-emerald-500 focus:outline-none transition"
+        [value]="TextSignals['username']()"
+        (input)="handleTextValue($event, 'username')"
+      >
+    </div>
+
+    <!-- ngModel Example -->
+    <div class="rounded-xl border border-slate-200 p-6 space-y-4">
+      <h2 class="text-lg font-semibold text-slate-700">
+        ngModel Example:
+        <span class="text-violet-600 font-bold">{{ data }}</span>
+      </h2>
+      <input
+        type="text"
+        placeholder="[(ngModel)] binding"
+        class="w-full rounded-lg border border-slate-300 px-4 py-2 focus:ring-2 focus:ring-violet-500 focus:outline-none transition"
+        [(ngModel)]="data"
+      >
+      <input
+        type="text"
+        placeholder="[ngModel] + (ngModelChange)"
+        class="w-full rounded-lg border border-slate-300 px-4 py-2 focus:ring-2 focus:ring-violet-500 focus:outline-none transition"
+        [ngModel]="data"
+        (ngModelChange)="data = $event"
+      >
+    </div>
+
+    <!-- Signal with change event -->
+    <div class="rounded-xl border border-slate-200 p-6 space-y-3">
+      <h2 class="text-lg font-semibold text-slate-700">
+        Signal (change event):
+        <span class="text-rose-600 font-bold">{{ data2() }}</span>
+      </h2>
+      <input
+        type="text"
+        class="w-full rounded-lg border border-slate-300 px-4 py-2 focus:ring-2 focus:ring-rose-500 focus:outline-none transition"
+        [value]="data2()"
+        (change)="data2.set($event.target.value)"
+      >
+    </div>
+
+    <!-- ngModel simple -->
+    <div class="rounded-xl border border-slate-200 p-6 space-y-3">
+      <h2 class="text-lg font-semibold text-slate-700">
+        Simple ngModel:
+        <span class="text-orange-600 font-bold">{{ dt3 }}</span>
+      </h2>
+      <input
+        type="text"
+        class="w-full rounded-lg border border-slate-300 px-4 py-2 focus:ring-2 focus:ring-orange-500 focus:outline-none transition"
+        [(ngModel)]="dt3"
+      >
+    </div>
+
+    <!-- First & Last Name -->
+    <div class="rounded-xl border border-slate-200 p-6 space-y-4">
+      <h2 class="text-lg font-semibold text-slate-700">
+        Full Name:
+        <span class="text-teal-600 font-bold">{{ dataFname }} {{ dataLname }}</span>
+      </h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <input
+          type="text"
+          placeholder="First Name"
+          class="w-full rounded-lg border border-slate-300 px-4 py-2 focus:ring-2 focus:ring-teal-500 focus:outline-none transition"
+          [(ngModel)]="dataFname"
+        >
+        <input
+          type="text"
+          placeholder="Last Name"
+          class="w-full rounded-lg border border-slate-300 px-4 py-2 focus:ring-2 focus:ring-teal-500 focus:outline-none transition"
+          [(ngModel)]="dataLname"
+        >
+      </div>
+    </div>
+
+  </div>
+</div>

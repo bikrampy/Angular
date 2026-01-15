@@ -1,0 +1,30 @@
+<div class="max-w-md mx-auto mt-8 bg-white rounded-xl shadow-md overflow-hidden">
+  
+  @for (user of users(); track user.id) {
+    <p
+      class="flex items-center justify-between px-4 py-2 border-b text-gray-800"
+      [ngClass]="$even ? 'bg-gray-400' : 'bg-white'"
+    >
+      <span class="font-medium">
+        {{ $index + 1 }}. {{ user.name }}
+      </span>
+      <span class="flex gap-2">
+        @if ($first) {
+          <span class="text-xs bg-blue-500 text-white px-2 py-0.5 rounded-full">
+            Admin
+          </span>
+        }
+        @if ($last) {
+          <span class="text-xs bg-purple-500 text-white px-2 py-0.5 rounded-full">
+            Guest
+          </span>
+        }
+      </span>
+    </p>
+    @if ($count == $index + 1) {
+      <p class="px-4 py-3 text-sm font-semibold text-gray-700 bg-gray-50">
+        Total Count: {{ $count }}
+      </p>
+    }
+  }
+</div>

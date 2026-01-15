@@ -1,0 +1,11 @@
+<h1 class="text-4xl p-4">{{ heading }}</h1>
+<p class="p-4">The Value of 2 + 2 is {{ 2+2 }}</p>
+<a class="m-4 px-4 py-2 bg-pink-600 text-gray-400 rounded-4xl" [href]="websiteURL" [target]="target">Visit My Website</a>
+<div class="m-4">
+    <button class="rounded-2xl px-2 py-1 bg-gray-500" (click)="deductValue()">-</button>
+    <span class="p-2">Value of counter is {{counter}}</span>
+    <button class="rounded-2xl px-2 py-1 bg-gray-500" (click)="addValue()">+</button>
+</div>
+<div class="w-1/2 p-4 border-white border">
+    <img [src]="imgSrc" alt="" class="">
+</div>

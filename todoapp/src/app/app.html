@@ -1,0 +1,52 @@
+<div class="min-h-screen bg-linear-to-br from-slate-100 to-slate-200 flex items-center justify-center p-6">
+  <div class="w-full max-w-xl bg-white rounded-2xl shadow-xl p-8 space-y-6">
+
+    <!-- Header -->
+    <h1 class="text-3xl font-bold text-center text-slate-800">
+      To Do With Angular
+    </h1>
+
+    <!-- Input Section -->
+    <div class="flex gap-3">
+      <input
+        type="text"
+        [(ngModel)]="tsk"
+        placeholder="Enter a new task..."
+        class="flex-1 rounded-lg border border-slate-300 px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none transition"
+      >
+      <button
+        (click)="addTask()"
+        class="bg-blue-600 text-white px-5 py-2 rounded-lg font-medium hover:bg-blue-700 transition"
+      >
+        Add
+      </button>
+    </div>
+
+    <!-- Task List -->
+    <ul class="space-y-3">
+      @for (task of tasks(); track task.id) {
+        <li class="flex items-center justify-between bg-slate-50 border border-slate-200 rounded-lg px-4 py-3">
+          <div class="flex items-center gap-4">
+            <span class="text-sm font-semibold text-slate-500">
+              {{ task.id + 1 }}
+            </span>
+            <span class="text-slate-800">
+              {{ task.title }}
+            </span>
+          </div>
+          <button
+            (click)="deleteTask($index)"
+            class="text-red-600 hover:text-red-700 font-medium transition"
+          >
+            Delete
+          </button>
+        </li>
+      } @empty {
+        <p class="text-center text-slate-500 italic">
+          No Tasks Found.
+        </p>
+      }
+    </ul>
+
+  </div>
+</div>

@@ -1,0 +1,37 @@
+<div class="max-w-md mx-auto bg-white rounded-lg shadow p-6">
+  @if (isLoggedIn()) {
+    <p class="text-lg font-semibold mb-4 text-gray-800">Welcome, {{user()}}!</p>
+    <button (click)="isLoggedIn.set(false)" class="px-4 py-2 rounded font-medium transition bg-red-500 hover:bg-red-600 text-white">Logout</button>
+  } @else {
+    <p class="text-lg font-semibold mb-4 text-gray-800">Please Login</p>
+    <button (click)="isLoggedIn.set(true)" class="px-4 py-2 rounded font-medium transition bg-blue-500 hover:bg-blue-600 text-white">Login</button>
+  }
+</div>
+
+
+<div class="max-w-md mx-auto mt-8 p-6 bg-white rounded-xl shadow-md space-y-4">
+  
+  <select
+    class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+    (change)="handleSelect($event)"
+  >
+    <option value="pending">Pending</option>
+    <option value="complete">Complete</option>
+    <option value="error">Error</option>
+  </select>
+
+  @if (status() == 'pending') {
+    <p class="text-yellow-600 font-medium">
+      ⏳ Your work is pending
+    </p>
+  } @else if (status() == 'complete') {
+    <p class="text-green-600 text-lg font-semibold">
+      ✅ You have completed the work
+    </p>
+  } @else {
+    <p class="text-red-600 font-medium">
+      ❌ There is an error in the work
+    </p>
+  }
+
+</div>
