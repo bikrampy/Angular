@@ -1,0 +1,55 @@
+<div class="min-h-screen bg-slate-100 flex items-center justify-center p-6">
+  <div class="w-full max-w-3xl bg-white rounded-2xl shadow-xl p-8 space-y-10">
+    <!-- Header -->
+    <h1 class="text-3xl font-bold text-center text-slate-800">Angular Pipes Playground</h1>
+
+    <!-- Text Pipes -->
+    <div class="rounded-xl border border-slate-200 p-6 space-y-3">
+      <h2 class="text-xl font-semibold text-slate-700">Text Pipes</h2>
+      <p class="text-slate-600">
+        <span class="font-medium">Uppercase:</span> {{ title() | uppercase }}
+      </p>
+      <p class="text-slate-600">
+        <span class="font-medium">Titlecase:</span> {{ title() | titlecase }}
+      </p>
+    </div>
+
+    <!-- Date Pipes -->
+    <div class="rounded-xl border border-slate-200 p-6 space-y-3">
+      <h2 class="text-xl font-semibold text-slate-700">Date Pipes</h2>
+      <p class="text-slate-600">Short: {{ date | date : 'short' }}</p>
+      <p class="text-slate-600">Full: {{ date | date : 'full' }}</p>
+      <p class="text-slate-600">Full Date: {{ date | date : 'fullDate' }}</p>
+      <p class="text-slate-600">Day (dd): {{ date | date : 'dd' }}</p>
+      <p class="text-slate-600">Month (MM): {{ date | date : 'MM' }}</p>
+      <p class="text-slate-600">Year (yy): {{ date | date : 'yy' }}</p>
+      <p class="text-slate-600">Custom (yy/dd/MM): {{ date | date : 'yy/dd/MM' }}</p>
+    </div>
+
+    <!-- Currency Pipes -->
+    <div class="rounded-xl border border-slate-200 p-6 space-y-3">
+      <h2 class="text-xl font-semibold text-slate-700">Currency Pipes</h2>
+      <p class="text-slate-600">INR: {{ price() | currency : 'INR' }}</p>
+      <p class="text-slate-600">USD: {{ price() | currency : 'USD' }}</p>
+    </div>
+
+    <!-- JSON Pipe -->
+    <div class="rounded-xl border border-slate-200 p-6 space-y-3">
+      <h2 class="text-xl font-semibold text-slate-700">JSON Pipe</h2>
+      <pre class="bg-slate-900 text-green-400 rounded-lg p-4 overflow-x-auto text-sm"
+        >{{ user() | json }}
+      </pre>
+    </div>
+
+    <!-- Custom Pipe -->
+    <div class="rounded-xl border border-slate-200 p-6 space-y-3">
+      <h2 class="text-xl font-semibold text-slate-700">Custom Pipe (trimText)</h2>
+      <p class="text-slate-600 leading-relaxed">
+        {{
+          'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis quasi optio quibusdam repudiandae doloremque corrupti dicta eaque, odit placeat eveniet velit, impedit quis reprehenderit et exercitationem! A, adipisci? Aspernatur, dolores.'
+            | trimText : 50
+        }}
+      </p>
+    </div>
+  </div>
+</div>

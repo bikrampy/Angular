@@ -1,0 +1,27 @@
+<div class="m-4 rounded-xl bg-amber-50 border border-amber-200 shadow-sm p-4 space-y-4">
+
+  <!-- Username -->
+  <p class="text-2xl font-semibold text-slate-800 border-b-2 border-amber-300 pb-2">
+    Hello, <span class="text-amber-600">{{ username }}</span>
+  </p>
+
+  <!-- Action Buttons -->
+  <div class="flex gap-3">
+    <button
+      (click)="selectUser()"
+      class="flex-1 bg-emerald-500 text-white py-2 rounded-lg font-medium
+             hover:bg-emerald-600 active:bg-emerald-700 transition"
+    >
+      Select
+    </button>
+
+    <button
+      (click)="deleteUser()"
+      class="flex-1 bg-rose-500 text-white py-2 rounded-lg font-medium
+             hover:bg-rose-600 active:bg-rose-700 transition"
+    >
+      Delete
+    </button>
+  </div>
+
+</div>

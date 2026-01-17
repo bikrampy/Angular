@@ -1,11 +1,12 @@
 import { Component, signal } from '@angular/core';
+import { User } from './User/user';
 
 @Component({
   selector: 'app-root',
-  imports: [],
+  imports: [User],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
-  protected readonly title = signal('11-directives');
+  arr = signal([0,1,2,3,4]);
 }

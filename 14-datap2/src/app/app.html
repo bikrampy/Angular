@@ -1,0 +1,52 @@
+
+<div class="min-h-screen bg-linear-to-br from-slate-100 to-slate-200 flex items-center justify-center p-6">
+  <div class="w-full max-w-2xl bg-white rounded-2xl shadow-xl p-8 space-y-8">
+
+    <!-- Header -->
+    <div class="text-center space-y-2">
+      <h1 class="text-3xl font-bold text-slate-800">
+        User Management
+      </h1>
+
+      <div class="inline-block px-4 py-2 rounded-lg bg-amber-50 border border-amber-200">
+        <span class="text-sm text-slate-500">Selected User</span>
+        <p class="text-xl font-semibold text-amber-600">
+          {{ selectedUser() || 'None' }}
+        </p>
+      </div>
+    </div>
+
+    <!-- Input & Button -->
+    <div class="flex flex-col sm:flex-row gap-4">
+      <input
+        type="text"
+        placeholder="Enter username"
+        class="flex-1 rounded-lg border border-slate-300 px-4 py-2 focus:ring-2 focus:ring-amber-500 focus:outline-none transition"
+        [value]="user()"
+        (change)="user.set($event.target.value)"
+      >
+      <button
+        (click)="addUser()"
+        class="bg-amber-500 text-white px-6 py-2 rounded-lg font-medium hover:bg-amber-600 active:bg-amber-700 transition"
+      >
+        Add New User
+      </button>
+    </div>
+
+    <!-- Divider -->
+    <hr class="border-slate-200">
+
+    <!-- User List -->
+    <div class="space-y-4">
+      @for (user of users(); track $index) {
+        <app-user
+          class="block"
+          (ondelete)="deleteUser($event)"
+          (onselect)="selectUser($event)"
+          [username]="user"
+        ></app-user>
+      }
+    </div>
+
+  </div>
+</div>

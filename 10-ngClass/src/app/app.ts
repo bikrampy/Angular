@@ -9,6 +9,7 @@ import { NgClass } from "@angular/common";
 })
 export class App {
   isDarkMode = signal(false);
+  pClasses = ['mb-2', 'text-4xl'];
   toggle(){
     this.isDarkMode.update(val => !val)
   }
