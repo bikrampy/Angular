@@ -1,10 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component, signal } from '@angular/core';
-import { TrimTextPipe } from './custom-pipes/trim-text-pipe';
+import { ShortenPipe } from './custom-pipes/shorten/shorten-pipe';
+
 
 @Component({
   selector: 'app-root',
-  imports: [CommonModule, TrimTextPipe],
+  imports: [CommonModule, ShortenPipe],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
