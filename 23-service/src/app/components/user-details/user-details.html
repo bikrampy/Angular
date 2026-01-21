@@ -1,0 +1,83 @@
+<div class="min-h-screen bg-slate-950 px-6 py-8 text-slate-100">
+  <div class="mx-auto max-w-3xl">
+    <h1 class="mb-6 text-3xl font-bold tracking-wide">
+      User Details
+    </h1>
+
+    @if (filteredData()) {
+      <div
+        class="rounded-2xl border border-slate-800 bg-slate-900 p-6 shadow-lg"
+      >
+        <!-- Header -->
+        <div class="mb-6 flex items-center gap-6">
+          <img
+            [src]="filteredData()?.image"
+            [alt]="filteredData()?.firstName"
+            class="h-28 w-28 rounded-full border border-slate-700 object-cover"
+          />
+
+          <div>
+            <h2 class="text-2xl font-semibold">
+              {{ filteredData()?.firstName }}
+              {{ filteredData()?.lastName }}
+            </h2>
+
+            <p class="mt-1 text-sm text-slate-400">
+              @{{ filteredData()?.username }}
+            </p>
+
+            <span
+              class="mt-2 inline-block rounded-full bg-indigo-500/10 px-3 py-1 text-xs font-medium text-indigo-400 capitalize"
+            >
+              {{ filteredData()?.role }}
+            </span>
+          </div>
+        </div>
+
+        <!-- Basic Info -->
+        <div class="grid gap-4 sm:grid-cols-2">
+          <p><span class="font-medium text-slate-300">Email:</span> {{ filteredData()?.email }}</p>
+          <p><span class="font-medium text-slate-300">Phone:</span> {{ filteredData()?.phone }}</p>
+          <p><span class="font-medium text-slate-300">Gender:</span> {{ filteredData()?.gender }}</p>
+          <p><span class="font-medium text-slate-300">Age:</span> {{ filteredData()?.age }}</p>
+        </div>
+
+        <hr class="my-6 border-slate-800" />
+
+        <!-- Address -->
+        <div class="mb-6">
+          <h3 class="mb-2 text-lg font-semibold text-slate-200">
+            Address
+          </h3>
+          <p class="text-slate-400">
+            {{ filteredData()?.address?.address }},
+            {{ filteredData()?.address?.city }},
+            {{ filteredData()?.address?.state }}
+            ({{ filteredData()?.address?.country }})
+          </p>
+        </div>
+
+        <!-- Company -->
+        <div class="mb-6">
+          <h3 class="mb-2 text-lg font-semibold text-slate-200">
+            Company
+          </h3>
+          <p><span class="font-medium text-slate-300">Name:</span> {{ filteredData()?.company?.name }}</p>
+          <p><span class="font-medium text-slate-300">Department:</span> {{ filteredData()?.company?.department }}</p>
+          <p><span class="font-medium text-slate-300">Title:</span> {{ filteredData()?.company?.title }}</p>
+        </div>
+
+        <!-- Bank -->
+        <div>
+          <h3 class="mb-2 text-lg font-semibold text-slate-200">
+            Bank
+          </h3>
+          <p><span class="font-medium text-slate-300">Card Type:</span> {{ filteredData()?.bank?.cardType }}</p>
+          <p><span class="font-medium text-slate-300">Currency:</span> {{ filteredData()?.bank?.currency }}</p>
+        </div>
+      </div>
+    } @else {
+      <p class="text-slate-400">Loading user details...</p>
+    }
+  </div>
+</div>
