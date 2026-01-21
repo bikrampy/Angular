@@ -1,0 +1,56 @@
+<div class="min-h-screen bg-slate-100 flex flex-col">
+
+  <!-- Header / Navigation -->
+  <header class="bg-white shadow-sm">
+    <nav class="max-w-6xl mx-auto px-6 py-4 flex items-center gap-6">
+      <a
+        routerLink=""
+        class="text-slate-700 font-medium hover:text-blue-600 transition"
+      >
+        Home
+      </a>
+      <a
+        routerLink="user"
+        class="text-slate-700 font-medium hover:text-blue-600 transition"
+      >
+        User
+      </a>
+    </nav>
+  </header>
+
+  <!-- Dummy Hero Section -->
+  <section class="bg-linear-to-r from-blue-50 to-indigo-50 py-12">
+    <div class="max-w-4xl mx-auto px-6 text-center space-y-4">
+      <h1 class="text-4xl font-bold text-slate-800">
+        Angular Child Routes Demo
+      </h1>
+      <p class="text-slate-600 text-lg">
+        This example demonstrates how child routes work in Angular using a clean layout.
+      </p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="flex-1 max-w-6xl mx-auto px-6 py-10">
+    <div class="bg-white rounded-2xl shadow-lg p-6 space-y-4">
+      <h2 class="text-2xl font-semibold text-slate-800">
+        Routed Content
+      </h2>
+      <p class="text-slate-600">
+        The content below is rendered dynamically using <code class="bg-slate-100 px-2 py-1 rounded">router-outlet</code>.
+        Navigate using the links above to see child routes in action.
+      </p>
+
+      <!-- Router Outlet -->
+      <router-outlet></router-outlet>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-white border-t">
+    <div class="max-w-6xl mx-auto px-6 py-4 text-center text-sm text-slate-500">
+      © 2026 Angular Routing Practice · Tailwind Styled
+    </div>
+  </footer>
+
+</div>

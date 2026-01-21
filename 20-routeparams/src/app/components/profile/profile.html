@@ -1,3 +1,48 @@
-<p>{{userId()}}</p>
-<p>{{userName()}}</p>
-<p>{{userAge()}}</p>
+<div class="min-h-[calc(100vh-120px)] flex flex-col items-center justify-center px-6 space-y-8">
+
+  <!-- Navigation -->
+  <nav class="flex gap-6 bg-white shadow-sm rounded-xl px-6 py-3">
+    <a
+      routerLink="/"
+      class="text-slate-700 font-medium hover:text-blue-600 transition"
+    >
+      Home
+    </a>
+
+    <a
+      [routerLink]="['/users']"
+      class="text-slate-700 font-medium hover:text-blue-600 transition"
+    >
+      Users
+    </a>
+  </nav>
+
+  <!-- Profile Card -->
+  <div class="w-full max-w-md bg-white rounded-2xl shadow-lg p-6 space-y-4">
+
+    <h1 class="text-2xl font-bold text-slate-800 text-center">
+      User Profile
+    </h1>
+
+    <div class="space-y-2 text-slate-700">
+      <p>
+        <span class="font-medium text-slate-500">Name:</span>
+        {{ userData().name }}
+      </p>
+      <p>
+        <span class="font-medium text-slate-500">Age:</span>
+        {{ userData().age }}
+      </p>
+      <p>
+        <span class="font-medium text-slate-500">Role:</span>
+        {{ userData().role }}
+      </p>
+      <p>
+        <span class="font-medium text-slate-500">City:</span>
+        {{ userData().city }}
+      </p>
+    </div>
+
+  </div>
+
+</div>

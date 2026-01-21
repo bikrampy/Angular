@@ -1,0 +1,43 @@
+<div class="space-y-6">
+
+  <!-- User Navigation -->
+  <nav class="flex gap-6 bg-white border border-slate-200 rounded-xl px-6 py-3 shadow-sm">
+    <a
+      routerLink="profile"
+      class="text-slate-700 font-medium hover:text-blue-600 transition"
+    >
+      Profile
+    </a>
+
+    <a
+      routerLink="settings"
+      class="text-slate-700 font-medium hover:text-blue-600 transition"
+    >
+      Settings
+    </a>
+  </nav>
+
+  <!-- Dummy User Content -->
+  <div class="bg-slate-50 border border-slate-200 rounded-xl p-6 space-y-4">
+
+    <h2 class="text-2xl font-bold text-slate-800">
+      User Section
+    </h2>
+
+    <p class="text-slate-600">
+      This is the <span class="font-medium text-blue-600">User</span> parent route.
+      The content below will change based on the selected child route.
+    </p>
+
+    <p class="text-slate-500 text-sm">
+      Click on <strong>Profile</strong> or <strong>Settings</strong> above to load child components inside this section.
+    </p>
+
+    <!-- Child Router Outlet -->
+    <div class="border-t border-slate-200 pt-4">
+      <router-outlet></router-outlet>
+    </div>
+
+  </div>
+
+</div>

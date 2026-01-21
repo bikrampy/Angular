@@ -1,0 +1,90 @@
+<!-- <div>
+    <h1>Title: {{ title.value }}</h1>
+    <input type="text" placeholder="Enter a Title" [formControl]="title" />
+    @if (title.invalid && title.touched) {
+        <span>Invalid Title</span>
+    }
+    <button (click)="submit()" [disabled]="title.invalid">Submit</button>
+    <button (click)="reset()">Reset</button>
+</div> -->
+
+<!-- <div>
+    <p>I am {{userDetail.value.name}} from {{userDetail.value.city}}, and I am {{userDetail.value.age}} years old.</p>
+    <form action="" [formGroup]="userDetail" (ngSubmit)="handleUserForm()">
+        <input type="text" placeholder="Enter Name" formControlName="name">
+        <input type="text" placeholder="Enter City" formControlName="city">
+        <input type="text" placeholder="Enter Age" formControlName="age">
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+    </form>
+</div> -->
+
+<div class="min-h-screen bg-slate-100 flex items-center justify-center p-6">
+  <div class="w-full max-w-md bg-white rounded-2xl shadow-lg p-8 space-y-6">
+    @if ( userEmail() && userPassword() ){
+        <div class="text-sm text-slate-600 space-y-1">
+            <p>
+                <span class="font-medium">Email:</span> {{ userEmail() }}
+            </p>
+            <p>
+                <span class="font-medium">Password:</span> {{ userPassword() }}
+            </p>
+        </div>
+    }
+    <form
+      class="space-y-4"
+      action=""
+      [formGroup]="logInForm"
+      (ngSubmit)="handleLoginForm()"
+    >
+      <div class="space-y-1">
+        <input
+          type="email"
+          placeholder="Enter your email"
+          formControlName="email"
+          class="w-full rounded-lg border border-slate-300 px-4 py-2
+                 focus:ring-2 focus:ring-blue-500 focus:outline-none
+                 transition"
+        />
+        @if (logInForm.get('email')?.invalid && logInForm.get('email')?.touched) {
+          <span class="text-sm text-red-600">
+            Invalid Email
+          </span>
+        }
+      </div>
+      <div class="space-y-1">
+        <input
+          type="password"
+          placeholder="Enter your password"
+          formControlName="password"
+          class="w-full rounded-lg border border-slate-300 px-4 py-2
+                 focus:ring-2 focus:ring-blue-500 focus:outline-none
+                 transition"
+        />
+        @if (logInForm.get('password')?.invalid && logInForm.get('password')?.touched) {
+          <span class="text-sm text-red-600">
+            Invalid Password
+          </span>
+        }
+      </div>
+      <div class="flex gap-3 pt-2">
+        <button
+          type="submit"
+          [disabled]="logInForm.invalid"
+          class="flex-1 bg-blue-600 text-white py-2 rounded-lg font-medium
+                 hover:bg-blue-700 disabled:bg-slate-300 disabled:cursor-not-allowed
+                 transition"
+        >
+          Submit
+        </button>
+        <button
+          type="reset"
+          class="flex-1 border border-slate-300 text-slate-700 py-2 rounded-lg
+                 hover:bg-slate-100 transition"
+        >
+          Reset
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

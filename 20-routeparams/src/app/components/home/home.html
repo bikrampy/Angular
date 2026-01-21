@@ -1,7 +1,28 @@
-<nav>
-  <a routerLink="/">Home</a>
-  <a [routerLink]="['/profile', user().id, user().name, user().age]">Profile</a>
-</nav>
-<hr />
-<h1>home works!</h1>
-<button (click)="goToProfile()">Go To Shreyyy's Profile</button>
+<div class="min-h-[calc(100vh-120px)] flex flex-col items-center justify-center px-6 space-y-8">
+
+  <!-- Navigation -->
+  <nav class="flex gap-6 bg-white shadow-sm rounded-xl px-6 py-3">
+    <a
+      routerLink="/"
+      class="text-slate-700 font-medium hover:text-blue-600 transition"
+    >
+      Home
+    </a>
+
+    <a
+      [routerLink]="['/users']"
+      class="text-slate-700 font-medium hover:text-blue-600 transition"
+    >
+      Users
+    </a>
+  </nav>
+
+  <!-- Divider -->
+  <div class="w-full max-w-md border-t border-slate-200"></div>
+
+  <!-- Page Content -->
+  <h1 class="text-3xl font-bold text-slate-800">
+    This is the Home Page
+  </h1>
+
+</div>
